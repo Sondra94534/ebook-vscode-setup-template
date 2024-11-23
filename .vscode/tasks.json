@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Export to PDF",
+        "type": "shell",
+        "command": "pandoc",
+        "args": [
+          "--pdf-engine=xelatex",
+          "-o",
+          "output/ebook.pdf",
+          "metadata/frontmatter.md",
+          "chapters/*.md"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  

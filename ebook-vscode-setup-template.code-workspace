@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"emmet.preferences": {
+
+		},
+		"markdown.preview.breaks": true,
+		"editor.wordWrap": "on",
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+		"editor.minimap.enabled": true,
+		"files.autoSave": "onFocusChange",
+		"files.exclude": {
+			" output/": true
+		},
+		"editor.tabSize": 2
+	},
+	"extensions": {
+		"recommendations": [
+      "yzhang.markdown-all-in-one",
+      "shd101wyy.markdown-preview-enhanced",
+			"DavidAnson.vscode-markdownlint",
+			"Microsoft.python",
+      "bierner.markdown-mermaid",
+      "streetsidesoftware.code-spell-checker",
+			"redhat.vscode-yaml"
+    ]
+	}
+}
