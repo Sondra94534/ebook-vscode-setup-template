@@ -21,7 +21,7 @@ Before using this eBook development setup, ensure the following dependencies are
 |------------|-------------|----------------------------|
 | **Pandoc** | Converts Markdown to EPUB/PDF and other formats.| sudo apt install pandoc |
 | **LaTeX (XeLaTeX)** | Required for PDF export with Pandoc.| sudo apt install texlive-xetex |
-| **Calibre** | eBook reader and validation tool for EPUB. | sudo apt install calibre |
+| **Calibre** (Optional)| eBook reader and validation tool for EPUB. | sudo apt install calibre |
 | **Python 3** | Needed to run the Table of Contents generator script. | sudo apt install python3 |
 | **Java** (Optional) | Required for `epubcheck` to validate EPUB files. | sudo apt install default-jre |
 | **Okular** (Optional) | Lightweight document viewer for EPUB/PDF. | sudo apt install okular |
@@ -52,15 +52,13 @@ eBook_Project/
 │   └── images
 │    └── cover.webp        # Cover image for the eBook
 ├── metadata/             # Metadata files
-│   ├── frontmatter.md    # YAML frontmatter metadata
-│   ├── ebook.yaml        # Optional YAML metadata for pandoc
-│   └── toc.ncx           # Optional custom Table of Contents
-├── styles/               # CSS for EPUB styling
-│   └── custom.css
+│   ├── frontmatter.md    # Metadata template for use in Markdown files. 
+│   ├── ebook.yaml        # YAML frontmatter metadata
+├── styles/               
+│   └── custom.css        # CSS for EPUB styling
 ├── output/               # Exported eBook files
 │   ├── ebook.pdf
 │   └── ebook.epub
-├── TOC.md                # Generated Table of Contents
 └── README.md             # Project documentation (this file)
 ```
 
@@ -180,6 +178,22 @@ java -version
 
 Edit the `metadata/frontmatter.md` (example of chapter YAML headers) or `metadata/ebook.yaml` (eBook details) files to include your book's title, author, and other metadata:
 
+#### Markdown `frontmatter.md' Header
+
+```yaml
+---
+title: "Chapter Title"
+contributors:
+  - "Editor: Your Name"
+  - "Reviewer: Contributor Name"
+keywords:
+  - example
+  - placeholder
+---
+```
+
+#### eBook YAML:
+
 ```yaml
 title: "My eBook Title"
 author: "Your Name"
@@ -193,15 +207,7 @@ language: "en"
 - Add chapters in the chapters/ directory as separate Markdown files.
 - Use headers (#, ##, etc.) to structure the content, enabling automatic TOC generation.
 
-### Step 6: Generate the TOC
-
-Run the Python script `generate_toc.py` to create a dynamic Table of Contents:
-
-```bash
-python3 generate_toc.py
-```
-
-### Step 7: Export Your eBook
+### Step 6: Export Your eBook
 
 Use VS Code's preconfigured tasks to export to PDF or EPUB:
 

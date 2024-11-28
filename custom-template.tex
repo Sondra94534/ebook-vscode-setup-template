@@ -1,0 +1,75 @@
+\documentclass[
+  12pt, % Default font size
+  a4paper, % Default paper size
+]{book}
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage} % Force page break after each section
+
+\usepackage{fontspec} % Required for custom fonts with XeLaTeX
+\setmainfont{Georgia} % Set the main text font to Georgia
+\setsansfont{Arial}   % Set the sans-serif font to Arial
+\setmonofont{Courier New} % Set the monospaced font to Courier New
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor} % Required for defining colors
+\usepackage{hyperref}
+\usepackage{longtable,booktabs,array}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+
+% Define the color Maroon
+\definecolor{Maroon}{RGB}{128, 0, 0}
+
+% Define \tightlist to avoid errors
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Header and Footer settings
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{eBook} % Left header: Book title - fill in the book title here.
+\fancyhead[R]{\thepage} % Right header: Page number
+\fancyfoot[C]{\thepage} % Footer: Centered page number
+
+% Hyperref setup
+\hypersetup{
+  pdftitle={eBook},% Fill in the title of the book.
+  pdfauthor={Your Name},% Fill in the name of the author.
+  colorlinks=true,
+  linkcolor=Maroon,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=Blue,
+  pdfcreator={LaTeX via pandoc}
+}
+
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdot}
+\renewcommand{\cftchapnumwidth}{2.5em} % Adjust width as needed
+\renewcommand{\cftchapaftersnum}{.} % Change chapter numbering style
+\renewcommand{\thechapter}{\Roman{chapter}} % Change chapter numbering style
+\renewcommand{\thesection}{\arabic{section}} % Change section numbering style
+
+
+\title{eBook} % Fill in the title of the eBook here. 
+\author{Your Name} % Fill in the name of the author here. 
+\date{2024\\}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand{\contentsname}{Table of Contents} % Customize TOC title
+\setcounter{tocdepth}{2} % Include up to subsection level
+\tableofcontents
+
+% Include chapters from Markdown files
+$body$
+
+\end{document}
